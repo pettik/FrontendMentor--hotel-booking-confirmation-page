@@ -194,7 +194,7 @@ main > header h1 span {
 }
 
 /* ASIDE SECTION */
-aside {
+.sidebar {
   position: fixed;
   top: 0;
   left: 0;
@@ -209,25 +209,25 @@ aside {
   background-color: var(--color-background);
 }
 
-.main-header {
+.sidebar_header {
   display: flex;
   justify-content: space-between;
 }
 
-aside nav {
+.sidebar__nav {
   flex: 2;
 }
 
-aside nav ul {
+.sidebar__list {
   list-style: none;
   padding: 0;
 }
 
-aside nav ul li {
+.sidebar__item {
   display: flex;
   justify-content: space-between;
 }
-aside nav ul li > div {
+.sidebar__link-content {
   display: flex;
   width: 100%;
 }
