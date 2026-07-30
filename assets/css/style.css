@@ -149,7 +149,6 @@ h6 {
 }
 
 body {
-  position: relative;
   font-family: var(--font-body);
   font-size: 14px;
   line-height: 1.5;
@@ -195,21 +194,28 @@ main > header h1 span {
 
 /* ASIDE SECTION */
 .sidebar {
+  position: relative;
+
+  padding: 1rem;
+  background-color: var(--color-background);
+  width: 100%;
+}
+
+.sidebar__panel {
   position: fixed;
   top: 0;
-  left: 0;
+  left: 0rem;
+  width: 100%;
+  min-height: 100vh;
+  z-index: 1;
+  padding: 1rem;
+  background-color: var(--color-background);
   display: flex;
   justify-content: flex-start;
   flex-direction: column;
-
-  width: 100%;
-  min-height: 100vh;
-  padding: 1rem;
-  z-index: 1;
-  background-color: var(--color-background);
 }
 
-.sidebar_header {
+.sidebar__header {
   display: flex;
   justify-content: space-between;
 }
