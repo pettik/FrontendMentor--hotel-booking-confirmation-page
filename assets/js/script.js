@@ -8,8 +8,10 @@ menuIcon.addEventListener("click", function () {
   if (menuIcon.getAttribute("aria-expanded") === "false") {
     menuIcon.setAttribute("aria-expanded", "true");
     menuIconImg.src = "./assets/images/icon-close.svg";
+    menuIcon.setAttribute("aria-label", "close");
   } else {
     menuIcon.setAttribute("aria-expanded", "false");
     menuIconImg.src = "./assets/images/icon-menu.svg";
+    menuIcon.setAttribute("aria-label", "open");
   }
 });
