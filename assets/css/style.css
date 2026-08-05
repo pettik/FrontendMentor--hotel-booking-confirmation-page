@@ -39,7 +39,7 @@
   --color-border: var(--neutral-400);
 
   --sidebar-header: 4rem;
-  --main-padding: 0.5rem;
+  --main-padding: 0.75rem;
 
   /* Typography */
   --font-body:
@@ -256,9 +256,24 @@ main > header h1 span {
   display: flex;
   justify-content: space-between;
 }
+.sidebar__link {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  gap: var(--main-padding);
+  padding: 0.5rem 0.85rem;
+  border-radius: 0.5rem;
+  text-decoration: none;
+  color: var(--color-text);
+}
+
 .sidebar__link-content {
   display: flex;
   width: 100%;
+}
+
+.active-link {
+  background: var(--neutral-0);
 }
 
 /* MAIN */
