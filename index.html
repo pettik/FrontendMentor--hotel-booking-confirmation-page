@@ -17,6 +17,20 @@
     <link rel="stylesheet" href="./assets/css/style.css" />
   </head>
   <body>
+    <div class="backdrop" aria-hidden="true"></div>
+    <header class="topbar">
+      <!-- MAIN LOGO -->
+      <img src="./assets/images/logo.svg" alt="Maison Soleil" />
+      <button
+        aria-expanded="false"
+        aria-controls="main-panel"
+        aria-label="open"
+        type="button"
+        id="menu-main-icon"
+      >
+        <img src="./assets/images/icon-menu.svg" alt="" />
+      </button>
+    </header>
     <!-- Sidebar starts -->
     <aside class="sidebar">
       <section class="sidebar__header">
@@ -25,74 +39,69 @@
         <button
           aria-expanded="false"
           aria-controls="sidebar-panel"
-          aria-label="open"
+          aria-label="close"
           type="button"
-          id="menu-icon"
+          id="close-icon"
         >
-          <img src="./assets/images/icon-menu.svg" alt="" />
+          <img src="./assets/images/icon-close.svg" alt="" />
         </button>
       </section>
-      <div class="sidebar__panel" id="sidebar-panel">
-        <nav class="sidebar__nav">
-          <ul class="sidebar__list">
-            <li class="sidebar__item">
-              <a href="#" class="sidebar__link active-link">
-                <div class="sidebar__link-content">
-                  <img src="./assets/images/icon-bed.svg" alt="" />
-                  <p>Your Stay</p>
-                </div>
-                <span class="sidebar__badge">1</span>
-              </a>
-            </li>
-            <li class="sidebar__item">
-              <a href="#" class="sidebar__link">
-                <div class="sidebar__link-content">
-                  <img src="./assets/images/icon-house.svg" alt="" />
-                  <p>The house</p>
-                </div>
-              </a>
-            </li>
-            <li class="sidebar__item">
-              <a href="#" class="sidebar__link">
-                <div class="sidebar__link-content">
-                  <img src="./assets/images/icon-pin.svg" alt="" />
-                  <p>Around town</p>
-                </div>
-              </a>
-            </li>
-            <li class="sidebar__item">
-              <a href="#" class="sidebar__link">
-                <div class="sidebar__link-content">
-                  <img
-                    src="./assets/images/icon-breakfast-outline.svg"
-                    alt=""
-                  />
-                  <p>Breakfast</p>
-                </div>
-              </a>
-            </li>
-            <li class="sidebar__item">
-              <a href="#" class="sidebar__link">
-                <div class="sidebar__link-content">
-                  <img src="./assets/images/icon-mail.svg" alt="" />
-                  <p>Messages</p>
-                </div>
-              </a>
-            </li>
-          </ul>
-        </nav>
-        <section class="sidebar__weather">
-          <p>Today in Cassis</p>
-          <p>27°</p>
-          <p>Sunny · light breeze</p>
-        </section>
+      <nav class="sidebar__nav">
+        <ul class="sidebar__list">
+          <li class="sidebar__item">
+            <a href="#" class="sidebar__link active-link">
+              <div class="sidebar__link-content">
+                <img src="./assets/images/icon-bed.svg" alt="" />
+                <p>Your Stay</p>
+              </div>
+              <span class="sidebar__badge">1</span>
+            </a>
+          </li>
+          <li class="sidebar__item">
+            <a href="#" class="sidebar__link">
+              <div class="sidebar__link-content">
+                <img src="./assets/images/icon-house.svg" alt="" />
+                <p>The house</p>
+              </div>
+            </a>
+          </li>
+          <li class="sidebar__item">
+            <a href="#" class="sidebar__link">
+              <div class="sidebar__link-content">
+                <img src="./assets/images/icon-pin.svg" alt="" />
+                <p>Around town</p>
+              </div>
+            </a>
+          </li>
+          <li class="sidebar__item">
+            <a href="#" class="sidebar__link">
+              <div class="sidebar__link-content">
+                <img src="./assets/images/icon-breakfast-outline.svg" alt="" />
+                <p>Breakfast</p>
+              </div>
+            </a>
+          </li>
+          <li class="sidebar__item">
+            <a href="#" class="sidebar__link">
+              <div class="sidebar__link-content">
+                <img src="./assets/images/icon-mail.svg" alt="" />
+                <p>Messages</p>
+              </div>
+            </a>
+          </li>
+        </ul>
+      </nav>
+      <section class="sidebar__weather">
+        <p>Today in Cassis</p>
+        <p>27°</p>
+        <p>Sunny · light breeze</p>
+      </section>
 
-        <footer class="sidebar__footer">
-          <p>Est. 1987</p>
-          <p>Maison Soleil · 12 Rue des Oliviers · Cassis</p>
-          <p>© 2026 Maison Soleil</p>
-        </footer>
-      </div>
+      <footer class="sidebar__footer">
+        <p>Est. 1987</p>
+        <p>Maison Soleil · 12 Rue des Oliviers · Cassis</p>
+        <p>© 2026 Maison Soleil</p>
+      </footer>
     </aside>
 
     <main>

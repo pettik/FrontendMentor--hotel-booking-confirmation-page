@@ -260,7 +260,6 @@ main > header h1 span {
   display: flex;
   justify-content: space-between;
   width: 100%;
-  gap: var(--main-padding);
   padding: 0.5rem 0.85rem;
   border-radius: 0.5rem;
   text-decoration: none;
@@ -270,6 +269,7 @@ main > header h1 span {
 .sidebar__link-content {
   display: flex;
   width: 100%;
+  gap: 0.45rem;
 }
 
 .active-link {
