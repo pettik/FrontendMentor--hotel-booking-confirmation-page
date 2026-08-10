@@ -38,53 +38,53 @@
   --color-accent-soft: var(--sun-50);
   --color-border: var(--neutral-400);
 
-  --sidebar-header: 4rem;
+  --topbar-height: 4rem;
   --main-padding: 0.75rem;
 
   /* Typography */
   --font-body:
-    'DM Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI',
+    "DM Sans", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
     sans-serif;
-  --font-display: 'Fraunces', Georgia, serif;
-  --font-mono: 'DM Mono', 'Courier New', monospace;
+  --font-display: "Fraunces", Georgia, serif;
+  --font-mono: "DM Mono", "Courier New", monospace;
 }
 
 @font-face {
-  font-family: 'Fraunces';
-  src: url('../fonts/fraunces/Fraunces-VariableFont_SOFT,WONK,opsz,wght.ttf')
-    format('truetype');
+  font-family: "Fraunces";
+  src: url("../fonts/fraunces/Fraunces-VariableFont_SOFT,WONK,opsz,wght.ttf")
+    format("truetype");
   font-weight: 100 900;
   font-style: normal;
   font-display: swap;
 }
 
 @font-face {
-  font-family: 'Fraunces';
-  src: url('../fonts/fraunces/Fraunces-Italic-VariableFont_SOFT,WONK,opsz,wght.ttf')
-    format('truetype');
+  font-family: "Fraunces";
+  src: url("../fonts/fraunces/Fraunces-Italic-VariableFont_SOFT,WONK,opsz,wght.ttf")
+    format("truetype");
   font-weight: 100 900;
   font-style: italic;
   font-display: swap;
 }
 
 @font-face {
-  font-family: 'DM Sans';
-  src: url('../fonts/dm-sans/DMSans-VariableFont_opsz,wght.ttf')
-    format('truetype');
+  font-family: "DM Sans";
+  src: url("../fonts/dm-sans/DMSans-VariableFont_opsz,wght.ttf")
+    format("truetype");
   font-weight: 100 900;
   font-display: swap;
 }
 
 @font-face {
-  font-family: 'DM Mono';
-  src: url('../fonts/dm-mono/DMMono-Regular.ttf') format('truetype');
+  font-family: "DM Mono";
+  src: url("../fonts/dm-mono/DMMono-Regular.ttf") format("truetype");
   font-weight: 400;
   font-display: swap;
 }
 
 @font-face {
-  font-family: 'DM Mono';
-  src: url('../fonts/dm-mono/DMMono-Medium.ttf') format('truetype');
+  font-family: "DM Mono";
+  src: url("../fonts/dm-mono/DMMono-Medium.ttf") format("truetype");
   font-weight: 500;
   font-display: swap;
 }
@@ -197,11 +197,16 @@ main > header h1 span {
 
 /* ASIDE SECTION */
 .sidebar {
-  position: relative;
+  z-index: 10;
   position: fixed;
   padding: var(--main-padding);
   background-color: var(--color-background);
   width: 85%;
+  min-height: 100vh;
+  top: 0;
+  left: 0;
+  transform: translateX(-100%);
+  transition: transform 0.3s;
 }
 
 .sidebar--open {
@@ -209,12 +214,11 @@ main > header h1 span {
 }
 
 .sidebar__header {
-  top: 0;
-  left: 0;
-  height: var(--sidebar-header);
-  width: 100%;
   display: flex;
   justify-content: space-between;
+  height: var(--topbar-height);
+  width: 100%;
+
   padding: var(--main-padding);
   background-color: var(--color-background);
 }
@@ -260,7 +264,34 @@ main > header h1 span {
   background: var(--neutral-0);
 }
 
+.backdrop {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.8);
+  opacity: 0;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.backdrop--visible {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.topbar {
+  position: sticky;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: var(--main-padding);
+  background-color: var(--color-background);
+  z-index: 0;
+}
+
 /* MAIN */
 main {
-  margin-top: var(--sidebar-header);
+  margin-top: var(--topbar-height);
+  z-index: -1;
 }
