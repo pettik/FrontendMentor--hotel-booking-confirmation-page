@@ -294,6 +294,9 @@ main > header h1 span {
 
 .sidebar__weather {
   margin-top: auto;
+  background-color: var(--sun-200);
+  padding: var(--main-padding);
+  margin-inline: 0.5rem;
 }
 
 /* MAIN */
