@@ -297,10 +297,12 @@ main > header h1 span {
   background-color: var(--sun-200);
   padding: var(--main-padding);
   margin-inline: 0.5rem;
+  margin-bottom: 0.5rem;
 }
 
 .sidebar__footer {
   border-top: 1px dashed var(--color-border);
+  padding-top: var(--main-padding);
 }
 
 /* MAIN */
