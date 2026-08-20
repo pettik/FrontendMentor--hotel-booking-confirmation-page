@@ -298,11 +298,23 @@ main > header h1 span {
   padding: var(--main-padding);
   margin-inline: 0.5rem;
   margin-bottom: 0.5rem;
+  border-radius: 0.75rem;
+}
+
+.sidebar__weather p:first-child {
+  font-family: var(--font-mono);
+}
+.sidebar__weather p:nth-child(2) {
+  font-family: var(--font-display);
 }
 
 .sidebar__footer {
   border-top: 1px dashed var(--color-border);
   padding-top: var(--main-padding);
+}
+
+.sidebar__footer p {
+  margin-bottom: 0.5rem;
 }
 
 /* MAIN */
