@@ -303,6 +303,8 @@ main > header h1 span {
 
 .sidebar__weather p:first-child {
   font-family: var(--font-mono);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
 }
 .sidebar__weather p:nth-child(2) {
   font-family: var(--font-display);
