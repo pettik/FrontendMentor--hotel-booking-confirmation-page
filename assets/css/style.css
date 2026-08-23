@@ -308,6 +308,11 @@ main > header h1 span {
 }
 .sidebar__weather p:nth-child(2) {
   font-family: var(--font-display);
+  font-size: 2rem;
+  font-weight: 400;
+}
+.sidebar__weather p:last-child {
+  color: var(--color-text-muted);
 }
 
 .sidebar__footer {
@@ -317,6 +322,11 @@ main > header h1 span {
 
 .sidebar__footer p {
   margin-bottom: 0.5rem;
+}
+
+.sidebar__footer p:first-child {
+  font-family: var(--font-mono);
+  letter-spacing: 0.05em;
 }
 
 /* MAIN */
