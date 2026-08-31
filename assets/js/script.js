@@ -5,8 +5,7 @@ const backdrop = document.querySelector('.backdrop');
 let menuIconImg = menuIcon.querySelector('img');
 
 closeIcon.addEventListener('click', function () {
-  sidebarPanel.classList.remove('sidebar--open');
-  backdrop.classList.remove('backdrop--visible');
+  closeSidebar();
 });
 
 menuIcon.addEventListener('click', function () {
@@ -29,3 +28,16 @@ backdrop.addEventListener('click', function () {
   sidebarPanel.classList.remove('sidebar--open');
   backdrop.classList.remove('backdrop--visible');
 });
+
+// Pomocí ESC zavřít oteveřené mobilní menu
+document.addEventListener('keydown', function (event) {
+  if (event.key === 'Escape') {
+    closeSidebar();
+  }
+});
+
+function closeSidebar() {
+  sidebarPanel.classList.remove('sidebar--open');
+  backdrop.classList.remove('backdrop--visible');
+  menuIcon.setAttribute('aria-expanded', 'false');
+}
