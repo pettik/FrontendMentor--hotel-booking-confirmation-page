@@ -25,8 +25,7 @@ menuIcon.addEventListener('click', function () {
 
 // Když uživatel klikne mimo sidebar na tmavý backdrop, zavři sidebar a zároveň skryj backdrop.
 backdrop.addEventListener('click', function () {
-  sidebarPanel.classList.remove('sidebar--open');
-  backdrop.classList.remove('backdrop--visible');
+  closeSidebar();
 });
 
 // Pomocí ESC zavřít oteveřené mobilní menu
@@ -40,4 +39,5 @@ function closeSidebar() {
   sidebarPanel.classList.remove('sidebar--open');
   backdrop.classList.remove('backdrop--visible');
   menuIcon.setAttribute('aria-expanded', 'false');
+  menuIcon.setAttribute('aria-label', 'open');
 }

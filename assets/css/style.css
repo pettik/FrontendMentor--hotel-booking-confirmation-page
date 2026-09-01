@@ -295,6 +295,7 @@ main > header h1 span {
   opacity: 0;
   pointer-events: none;
   z-index: 1;
+  transition: opacity 0.3s;
 }
 
 .backdrop--visible {
