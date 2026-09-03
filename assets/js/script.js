@@ -10,7 +10,7 @@ closeIcon.addEventListener("click", function () {
 
 menuIcon.addEventListener("click", function () {
   sidebarPanel.classList.add("sidebar--open");
-  backdrop.classList.toggle("backdrop--visible");
+  backdrop.classList.add("backdrop--visible");
   backdrop.setAttribute("aria-hidden", "false");
 
   if (menuIcon.getAttribute("aria-expanded") === "false") {
