@@ -9,7 +9,7 @@ closeIcon.addEventListener("click", function () {
 });
 
 menuIcon.addEventListener("click", function () {
-  sidebarPanel.classList.toggle("sidebar--open");
+  sidebarPanel.classList.add("sidebar--open");
   backdrop.classList.toggle("backdrop--visible");
   backdrop.setAttribute("aria-hidden", "false");
 
@@ -41,4 +41,5 @@ function closeSidebar() {
   backdrop.classList.remove("backdrop--visible");
   menuIcon.setAttribute("aria-expanded", "false");
   menuIcon.setAttribute("aria-label", "open");
+  backdrop.setAttribute("aria-hidden", "true");
 }
