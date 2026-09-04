@@ -13,14 +13,10 @@ menuIcon.addEventListener("click", function () {
   backdrop.classList.add("backdrop--visible");
   backdrop.setAttribute("aria-hidden", "false");
 
-  if (menuIcon.getAttribute("aria-expanded") === "false") {
+  if (menuIcon.getAttribute("aria-expanded") === "true") {
     menuIcon.setAttribute("aria-expanded", "true");
     menuIconImg.src = "./assets/images/icon-close.svg";
-    menuIcon.setAttribute("aria-label", "close");
-  } else {
-    menuIcon.setAttribute("aria-expanded", "false");
-    menuIconImg.src = "./assets/images/icon-menu.svg";
-    menuIcon.setAttribute("aria-label", "open");
+    menuIcon.setAttribute("aria-label", "Close menu");
   }
 });
 
@@ -40,6 +36,6 @@ function closeSidebar() {
   sidebarPanel.classList.remove("sidebar--open");
   backdrop.classList.remove("backdrop--visible");
   menuIcon.setAttribute("aria-expanded", "false");
-  menuIcon.setAttribute("aria-label", "open");
+  menuIcon.setAttribute("aria-label", "Open menu");
   backdrop.setAttribute("aria-hidden", "true");
 }
