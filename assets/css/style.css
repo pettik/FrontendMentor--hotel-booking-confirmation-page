@@ -43,48 +43,48 @@
 
   /* Typography */
   --font-body:
-    'DM Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI',
+    "DM Sans", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
     sans-serif;
-  --font-display: 'Fraunces', Georgia, serif;
-  --font-mono: 'DM Mono', 'Courier New', monospace;
+  --font-display: "Fraunces", Georgia, serif;
+  --font-mono: "DM Mono", "Courier New", monospace;
 }
 
 @font-face {
-  font-family: 'Fraunces';
-  src: url('../fonts/fraunces/Fraunces-VariableFont_SOFT,WONK,opsz,wght.ttf')
-    format('truetype');
+  font-family: "Fraunces";
+  src: url("../fonts/fraunces/Fraunces-VariableFont_SOFT,WONK,opsz,wght.ttf")
+    format("truetype");
   font-weight: 100 900;
   font-style: normal;
   font-display: swap;
 }
 
 @font-face {
-  font-family: 'Fraunces';
-  src: url('../fonts/fraunces/Fraunces-Italic-VariableFont_SOFT,WONK,opsz,wght.ttf')
-    format('truetype');
+  font-family: "Fraunces";
+  src: url("../fonts/fraunces/Fraunces-Italic-VariableFont_SOFT,WONK,opsz,wght.ttf")
+    format("truetype");
   font-weight: 100 900;
   font-style: italic;
   font-display: swap;
 }
 
 @font-face {
-  font-family: 'DM Sans';
-  src: url('../fonts/dm-sans/DMSans-VariableFont_opsz,wght.ttf')
-    format('truetype');
+  font-family: "DM Sans";
+  src: url("../fonts/dm-sans/DMSans-VariableFont_opsz,wght.ttf")
+    format("truetype");
   font-weight: 100 900;
   font-display: swap;
 }
 
 @font-face {
-  font-family: 'DM Mono';
-  src: url('../fonts/dm-mono/DMMono-Regular.ttf') format('truetype');
+  font-family: "DM Mono";
+  src: url("../fonts/dm-mono/DMMono-Regular.ttf") format("truetype");
   font-weight: 400;
   font-display: swap;
 }
 
 @font-face {
-  font-family: 'DM Mono';
-  src: url('../fonts/dm-mono/DMMono-Medium.ttf') format('truetype');
+  font-family: "DM Mono";
+  src: url("../fonts/dm-mono/DMMono-Medium.ttf") format("truetype");
   font-weight: 500;
   font-display: swap;
 }
@@ -199,66 +199,91 @@ main > header h1 span {
 .sidebar {
   display: flex;
   flex-direction: column;
-  z-index: 10;
   position: fixed;
-  padding: var(--main-padding);
-  background-color: var(--color-background);
-  width: 85%;
-  height: 100vh;
+  z-index: 10;
+
   top: 0;
   left: 0;
+
+  width: min(85%, 30rem);
+  height: 100vh;
+
+  padding: 0 1.25rem;
+
+  background-color: var(--color-background);
+
   transform: translateX(-100%);
-  transition: transform 0.3s;
+  transition: transform 0.3s ease;
 }
 
 .sidebar--open {
   transform: translateX(0);
 }
 
-.sidebar__nav {
-  flex: 2;
-}
-
 .sidebar__header {
   display: flex;
+  align-items: center;
   justify-content: space-between;
-  height: var(--topbar-height);
-  width: 100%;
 
-  padding: var(--main-padding);
+  width: 100%;
+  height: 5.625rem;
+
+  padding: 0;
+
+  border-bottom: 1px solid var(--color-border);
   background-color: var(--color-background);
+}
+
+.sidebar__header > img {
+  width: 6.5rem;
+  height: auto;
 }
 
 .sidebar__header button {
   display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 2.5rem;
+  height: 2.5rem;
+
+  padding: 0;
+
   background: none;
-  border: none;
-  color: var(--color-text);
+  border: 1px solid var(--color-border);
+  border-radius: 0.5rem;
+
   cursor: pointer;
-  padding: 0.5rem;
 }
 
 .sidebar__header button img {
   width: 1.25rem;
+  height: auto;
 }
-
 .sidebar__list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+
   list-style: none;
-  padding: 0;
+  padding: 1.25rem 0 0;
 }
 
 .sidebar__item {
   display: flex;
-  justify-content: space-between;
-  margin-bottom: 0.25rem;
 }
+
 .sidebar__link {
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  justify-content: space-between;
+
   width: 100%;
-  padding: 0.65rem 0.85rem;
-  border-radius: 0.5rem;
+
+  padding: 0.65rem 0.75rem;
+
+  border-radius: 0.75rem;
+
   text-decoration: none;
   color: var(--color-text);
 }
@@ -266,25 +291,42 @@ main > header h1 span {
 .sidebar__link-content {
   display: flex;
   align-items: center;
-  width: 100%;
-  line-height: 1.5;
-  gap: 0.45rem;
-}
 
-.active-link {
-  background: var(--neutral-0);
+  gap: 0.75rem;
+
+  width: auto;
+
+  line-height: 1.2;
 }
 
 .sidebar__link-content img {
   width: 1.25rem;
-  color: var(--color-text);
+  height: 1.25rem;
+}
+
+.active-link {
+  background-color: var(--color-surface);
+  color: var(--color-primary);
 }
 
 .sidebar__badge {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
   flex-shrink: 0;
-  padding: 0.25rem 0.5rem;
-  background-color: var(--color-surface);
-  border-radius: 0.5rem;
+
+  width: 1.25rem;
+  height: 1.25rem;
+
+  padding: 0;
+
+  background-color: var(--color-primary);
+  border-radius: 50%;
+
+  color: var(--color-surface);
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
 }
 .backdrop {
   position: fixed;
@@ -335,30 +377,42 @@ main > header h1 span {
 
 .sidebar__weather {
   margin-top: auto;
+  margin-inline: 0;
+  margin-bottom: 1.25rem;
+
+  padding: 1rem 1.25rem;
+
+  min-height: 0;
+
   background-color: var(--sun-200);
-  padding: var(--main-padding);
-  margin-inline: 0.5rem;
-  margin-bottom: 0.5rem;
-  border-radius: 0.75rem;
+  border-radius: 1rem;
 }
 
 .sidebar__weather p:first-child {
   font-family: var(--font-mono);
-  letter-spacing: 0.05rem;
+  font-size: 0.75rem;
+  letter-spacing: 0.08rem;
   text-transform: uppercase;
 }
+
 .sidebar__weather p:nth-child(2) {
+  margin-top: 0.5rem;
+
   font-family: var(--font-display);
-  font-size: 2rem;
+  font-size: 2.5rem;
   font-weight: 400;
+  line-height: 1;
 }
+
 .sidebar__weather p:last-child {
+  margin-top: 0.5rem;
   color: var(--color-text-muted);
 }
 
 .sidebar__footer {
+  padding: 1rem 0 1.25rem;
+
   border-top: 1px dashed var(--color-border);
-  padding-top: var(--main-padding);
 }
 
 .sidebar__footer p {
@@ -367,6 +421,15 @@ main > header h1 span {
 
 .sidebar__footer p:first-child {
   font-family: var(--font-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.08rem;
+  text-transform: uppercase;
+}
+
+.sidebar__footer p:nth-child(2),
+.sidebar__footer p:last-child {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
   letter-spacing: 0.05rem;
 }
 
