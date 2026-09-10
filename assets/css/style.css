@@ -226,7 +226,7 @@ main > header h1 span {
   justify-content: space-between;
 
   width: 100%;
-  height: 5.625rem;
+  height: 5rem;
 
   padding: 0;
 
@@ -235,7 +235,7 @@ main > header h1 span {
 }
 
 .sidebar__header > img {
-  width: 6.5rem;
+  width: 6rem;
   height: auto;
 }
 
@@ -257,16 +257,16 @@ main > header h1 span {
 }
 
 .sidebar__header button img {
-  width: 1.25rem;
+  width: 1.1rem;
   height: auto;
 }
 .sidebar__list {
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
+  gap: 0.25rem;
 
   list-style: none;
-  padding: 1.25rem 0 0;
+  padding: 1rem 0 0;
 }
 
 .sidebar__item {
@@ -280,7 +280,7 @@ main > header h1 span {
 
   width: 100%;
 
-  padding: 0.65rem 0.75rem;
+  padding: 0.6rem 0.75rem;
 
   border-radius: 0.75rem;
 
@@ -376,42 +376,52 @@ main > header h1 span {
 }
 
 .sidebar__weather {
+  position: relative;
+  overflow: hidden;
+
   margin-top: auto;
   margin-inline: 0;
-  margin-bottom: 1.25rem;
+  margin-bottom: 1rem;
 
-  padding: 1rem 1.25rem;
-
-  min-height: 0;
+  padding: 0.9rem 1rem;
 
   background-color: var(--sun-200);
   border-radius: 1rem;
 }
 
-.sidebar__weather p:first-child {
+.sidebar__weather p:first-of-type {
   font-family: var(--font-mono);
-  font-size: 0.75rem;
+  font-size: 0.7rem;
   letter-spacing: 0.08rem;
   text-transform: uppercase;
 }
 
-.sidebar__weather p:nth-child(2) {
-  margin-top: 0.5rem;
+.sidebar__weather p:nth-of-type(2) {
+  margin-top: 0.4rem;
 
   font-family: var(--font-display);
-  font-size: 2.5rem;
+  font-size: 2rem;
   font-weight: 400;
   line-height: 1;
 }
 
-.sidebar__weather p:last-child {
-  margin-top: 0.5rem;
+.sidebar__weather p:last-of-type {
+  margin-top: 0.4rem;
   color: var(--color-text-muted);
+}
+
+.sidebar__weather > img {
+  position: absolute;
+
+  width: 5rem;
+  height: 5rem;
+
+  top: -25px;
+  right: -10px;
 }
 
 .sidebar__footer {
   padding: 1rem 0 1.25rem;
-
   border-top: 1px dashed var(--color-border);
 }
 
