@@ -43,48 +43,48 @@
 
   /* Typography */
   --font-body:
-    "DM Sans", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    'DM Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI',
     sans-serif;
-  --font-display: "Fraunces", Georgia, serif;
-  --font-mono: "DM Mono", "Courier New", monospace;
+  --font-display: 'Fraunces', Georgia, serif;
+  --font-mono: 'DM Mono', 'Courier New', monospace;
 }
 
 @font-face {
-  font-family: "Fraunces";
-  src: url("../fonts/fraunces/Fraunces-VariableFont_SOFT,WONK,opsz,wght.ttf")
-    format("truetype");
+  font-family: 'Fraunces';
+  src: url('../fonts/fraunces/Fraunces-VariableFont_SOFT,WONK,opsz,wght.ttf')
+    format('truetype');
   font-weight: 100 900;
   font-style: normal;
   font-display: swap;
 }
 
 @font-face {
-  font-family: "Fraunces";
-  src: url("../fonts/fraunces/Fraunces-Italic-VariableFont_SOFT,WONK,opsz,wght.ttf")
-    format("truetype");
+  font-family: 'Fraunces';
+  src: url('../fonts/fraunces/Fraunces-Italic-VariableFont_SOFT,WONK,opsz,wght.ttf')
+    format('truetype');
   font-weight: 100 900;
   font-style: italic;
   font-display: swap;
 }
 
 @font-face {
-  font-family: "DM Sans";
-  src: url("../fonts/dm-sans/DMSans-VariableFont_opsz,wght.ttf")
-    format("truetype");
+  font-family: 'DM Sans';
+  src: url('../fonts/dm-sans/DMSans-VariableFont_opsz,wght.ttf')
+    format('truetype');
   font-weight: 100 900;
   font-display: swap;
 }
 
 @font-face {
-  font-family: "DM Mono";
-  src: url("../fonts/dm-mono/DMMono-Regular.ttf") format("truetype");
+  font-family: 'DM Mono';
+  src: url('../fonts/dm-mono/DMMono-Regular.ttf') format('truetype');
   font-weight: 400;
   font-display: swap;
 }
 
 @font-face {
-  font-family: "DM Mono";
-  src: url("../fonts/dm-mono/DMMono-Medium.ttf") format("truetype");
+  font-family: 'DM Mono';
+  src: url('../fonts/dm-mono/DMMono-Medium.ttf') format('truetype');
   font-weight: 500;
   font-display: swap;
 }
@@ -592,4 +592,305 @@ main > article:first-of-type dd {
 
   font-family: var(--font-display);
   font-size: 1.5rem;
+}
+
+/* RECEIPT */
+
+main > article:nth-of-type(2) {
+  margin-top: 2rem;
+  padding: 1.5rem 1.25rem;
+
+  background-color: var(--neutral-0);
+  border-radius: 1.25rem;
+
+  box-shadow: 0 1rem 2rem rgb(0 0 0 / 10%);
+}
+
+.recipe_top {
+  display: flex;
+  justify-content: space-between;
+
+  padding-bottom: 1rem;
+
+  border-bottom: 1px dashed var(--color-border);
+}
+
+.recipe_top > div:first-child p,
+.recipe_top > div:last-child p {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.08rem;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+}
+
+.recipe_top h2 {
+  margin-top: 0.5rem;
+
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 400;
+}
+
+.recipe_top > div:last-child {
+  text-align: right;
+}
+
+.recipe_content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+
+  padding: 1.5rem 0;
+
+  border-bottom: 1px dashed var(--color-border);
+}
+
+.checkin,
+.checkout {
+  display: flex;
+  flex-direction: column;
+}
+
+.checkin p:first-child,
+.checkout p:first-child {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.08rem;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+}
+
+.checkin p:nth-child(2),
+.checkout p:nth-child(2) {
+  margin-top: 0.5rem;
+
+  font-family: var(--font-display);
+  font-size: 2rem;
+  line-height: 1;
+}
+
+.checkin p:last-child,
+.checkout p:last-child {
+  margin-top: 0.5rem;
+  color: var(--color-text-muted);
+}
+
+.recipe_items dl {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 0.5rem;
+
+  margin: 1rem 0;
+}
+
+.recipe_items dt,
+.recipe_items dd {
+  margin: 0;
+}
+
+.recipe_items dd {
+  text-align: right;
+}
+
+.recipe_items dl:nth-of-type(2) {
+  padding-top: 1rem;
+
+  border-top: 1px solid var(--color-border);
+}
+
+.recipe_items dl:nth-of-type(2) dt {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.08rem;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+}
+
+.recipe_items dl:nth-of-type(2) dd {
+  font-family: var(--font-display);
+  font-size: 1.75rem;
+}
+
+.barcode {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+
+  margin-top: 1rem;
+}
+
+.barcode p {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.08rem;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+}
+
+.barcode img {
+  width: 6rem;
+  height: auto;
+}
+
+/* INFO CARDS */
+
+main > section {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+
+  margin-top: 2rem;
+}
+
+main > section > article {
+  padding: 1.5rem 1.25rem;
+
+  background-color: var(--neutral-0);
+  border: 1px solid var(--color-border);
+  border-radius: 1.25rem;
+
+  box-shadow: 0 0.75rem 1.5rem rgb(0 0 0 / 5%);
+}
+
+/* CARD HEADER */
+
+.card_header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.card_header > div {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.card_header img {
+  display: block;
+
+  width: 3rem;
+  height: 3rem;
+
+  padding: 0.65rem;
+
+  border-radius: 0.6rem;
+}
+
+.card_header h2 {
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  letter-spacing: 0.15rem;
+  text-transform: uppercase;
+}
+
+.card_header > p {
+  font-family: var(--font-display);
+  font-size: 1.75rem;
+}
+
+/* CARD CONTENT */
+
+main > section > article > p:first-of-type {
+  margin-top: 2rem;
+
+  font-family: var(--font-display);
+  font-size: 1.75rem;
+  line-height: 1.1;
+}
+
+main > section > article > p:nth-of-type(2) {
+  margin-top: 0.5rem;
+
+  color: var(--color-text-muted);
+}
+
+main > section > article > p:last-of-type {
+  margin-top: 1.5rem;
+
+  line-height: 1.5;
+}
+
+/* ARRIVAL */
+
+.arrival .card_header img {
+  background-color: var(--terracotta-600);
+}
+
+.arrival .card_header h2,
+.arrival .card_header > p {
+  color: var(--terracotta-600);
+}
+
+/* WIFI */
+
+.wifi .card_header img {
+  background-color: var(--blue-500);
+}
+
+.wifi .card_header h2,
+.wifi .card_header > p {
+  color: var(--blue-500);
+}
+
+/* BREAKFAST */
+
+.breakfast .card_header img {
+  background-color: var(--pink-500);
+}
+
+.breakfast .card_header h2,
+.breakfast .card_header > p {
+  color: var(--pink-500);
+}
+
+/* WIFI DETAILS */
+
+.wifi dl {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+
+  margin-top: 1rem;
+}
+
+.wifi dl dt,
+.wifi dl dd {
+  margin: 0;
+}
+
+.wifi dl dt {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.12rem;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+}
+
+.wifi dl dd {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 0.6rem 0.75rem;
+
+  background-color: var(--neutral-100);
+  border-radius: 0.6rem;
+}
+
+.wifi dl dd button {
+  padding: 0.25rem 0.6rem;
+
+  border: 1px solid var(--color-border);
+  border-radius: 999px;
+
+  background: transparent;
+
+  color: var(--color-text-muted);
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  text-transform: uppercase;
+
+  cursor: pointer;
 }
