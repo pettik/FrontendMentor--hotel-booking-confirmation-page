@@ -909,7 +909,7 @@ main > section > article > p:last-of-type {
 
 @media (min-width: 48rem) {
   main {
-    max-width: 52rem;
+    max-width: 48rem;
     margin-inline: auto;
     padding: 2rem;
   }
