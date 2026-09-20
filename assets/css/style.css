@@ -909,9 +909,16 @@ main > section > article > p:last-of-type {
 
 @media (min-width: 48rem) {
   main {
-    max-width: 48rem;
+    max-width: 36rem;
     margin-inline: auto;
-    padding: 2rem;
+    padding: 2rem 0;
+  }
+
+  .main__cards {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+    align-items: center;
   }
 
   /* MAIN HEADER */
@@ -955,14 +962,20 @@ main > section > article > p:last-of-type {
 
   main > article:first-of-type {
     float: left;
-
     margin-top: 0;
   }
 
   main > article:nth-of-type(2) {
     float: right;
-
     margin-top: 0;
+    transform: rotate(2deg);
+  }
+
+  main > article:nth-of-type(2) {
+    float: right;
+    margin-top: 0;
+
+    min-height: 35rem;
   }
 
   /* ARRIVAL + WIFI + BREAKFAST */
@@ -972,9 +985,14 @@ main > section > article > p:last-of-type {
 
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 1.5rem;
+    gap: 1.25rem;
 
-    padding-top: 4rem;
+    padding-top: 3rem;
+  }
+
+  main > section article {
+    min-height: 17rem;
+    padding: 1.5rem;
   }
 
   main > section .breakfast {
