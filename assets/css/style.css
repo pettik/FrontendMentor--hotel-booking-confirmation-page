@@ -43,48 +43,48 @@
 
   /* Typography */
   --font-body:
-    "DM Sans", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    'DM Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI',
     sans-serif;
-  --font-display: "Fraunces", Georgia, serif;
-  --font-mono: "DM Mono", "Courier New", monospace;
+  --font-display: 'Fraunces', Georgia, serif;
+  --font-mono: 'DM Mono', 'Courier New', monospace;
 }
 
 @font-face {
-  font-family: "Fraunces";
-  src: url("../fonts/fraunces/Fraunces-VariableFont_SOFT,WONK,opsz,wght.ttf")
-    format("truetype");
+  font-family: 'Fraunces';
+  src: url('../fonts/fraunces/Fraunces-VariableFont_SOFT,WONK,opsz,wght.ttf')
+    format('truetype');
   font-weight: 100 900;
   font-style: normal;
   font-display: swap;
 }
 
 @font-face {
-  font-family: "Fraunces";
-  src: url("../fonts/fraunces/Fraunces-Italic-VariableFont_SOFT,WONK,opsz,wght.ttf")
-    format("truetype");
+  font-family: 'Fraunces';
+  src: url('../fonts/fraunces/Fraunces-Italic-VariableFont_SOFT,WONK,opsz,wght.ttf')
+    format('truetype');
   font-weight: 100 900;
   font-style: italic;
   font-display: swap;
 }
 
 @font-face {
-  font-family: "DM Sans";
-  src: url("../fonts/dm-sans/DMSans-VariableFont_opsz,wght.ttf")
-    format("truetype");
+  font-family: 'DM Sans';
+  src: url('../fonts/dm-sans/DMSans-VariableFont_opsz,wght.ttf')
+    format('truetype');
   font-weight: 100 900;
   font-display: swap;
 }
 
 @font-face {
-  font-family: "DM Mono";
-  src: url("../fonts/dm-mono/DMMono-Regular.ttf") format("truetype");
+  font-family: 'DM Mono';
+  src: url('../fonts/dm-mono/DMMono-Regular.ttf') format('truetype');
   font-weight: 400;
   font-display: swap;
 }
 
 @font-face {
-  font-family: "DM Mono";
-  src: url("../fonts/dm-mono/DMMono-Medium.ttf") format("truetype");
+  font-family: 'DM Mono';
+  src: url('../fonts/dm-mono/DMMono-Medium.ttf') format('truetype');
   font-weight: 500;
   font-display: swap;
 }
@@ -913,7 +913,7 @@ main > section > article > p:last-of-type {
   /* MAIN */
   .topbar {
     max-width: 52rem;
-    padding-inline: 2rem; /* zarovnání s main paddingem, jak jsme řešili minule */
+    padding-inline: 2rem;
   }
   main {
     max-width: 52rem;
@@ -921,41 +921,55 @@ main > section > article > p:last-of-type {
     padding: 2rem;
   }
 
+  .main__cards {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+    align-items: center;
+  }
+
   /* MAIN HEADER */
 
   main > header {
-    display: flex;
-    align-items: flex-end;
-    justify-content: space-between;
-    gap: 2rem;
+  main > header {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    grid-template-rows: auto auto;
+    align-items: end;
+    column-gap: 2rem;
 
     margin-bottom: 4rem;
   }
 
+  main > header p {
+    grid-column: 1;
+    grid-row: 1;
+  }
+
   main > header h1 {
-    font-size: 4rem;
+    grid-column: 1;
+    grid-row: 2;
+
+    font-size: 3.5rem;
     line-height: 1;
   }
 
-  .header__actions {
+  main > header > div {
+    grid-column: 2;
+    grid-row: 2;
+
     display: flex;
     gap: 1rem;
-    margin-top: 0; /* na tabletu je header flex row, margin-top z mobilu by dělal nechtěnou mezeru */
-  }
-
-  main > header button {
-    min-width: 9rem;
   }
 
   /* RECEIPT + WELCOME CARD */
 
   main > article {
-    width: 50%;
+    width: calc(50% - 0.75rem);
   }
 
   main > article:first-of-type {
     float: left;
-
     margin-top: 0;
     padding: 2rem;
 
@@ -964,18 +978,17 @@ main > section > article > p:last-of-type {
 
   main > article:nth-of-type(2) {
     float: right;
-
+    float: right;
     margin-top: 0;
     padding: 2rem;
 
-    min-height: 34rem;
-  }
-
-  /* INFO CARDS */
+    min-height: 35rem;
 
   main > section {
     clear: both;
 
+    display: grid;
+    grid-template-columns: 1fr 1fr;
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 1.5rem;
@@ -984,7 +997,12 @@ main > section > article > p:last-of-type {
   }
 
   main > section article {
+    min-height: 17rem;
     padding: 2rem;
+  }
+
+  main > section .breakfast {
+    grid-column: 1;
   }
 
   main > section .breakfast {
