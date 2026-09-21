@@ -354,6 +354,8 @@ main > header h1 span {
   position: sticky;
   width: 100%;
   display: flex;
+  max-width: 75rem; /* stejná hodnota jako main na mobilu/desktopu */
+  margin: 0 auto; /* vycentruje topbar stejně jako main */
   justify-content: space-between;
   align-items: center;
   height: var(--topbar-height);
@@ -460,7 +462,7 @@ main > header {
   padding-top: 0.5rem;
 }
 
-main > header > p {
+.header__intro > p {
   font-family: var(--font-mono);
   font-size: 0.75rem;
   letter-spacing: 0.12rem;
@@ -479,7 +481,7 @@ main > header h1 span {
   font-style: italic;
 }
 
-main > header > div {
+.header__actions {
   display: flex;
   gap: 0.75rem;
   margin-top: 1.5rem;
@@ -908,51 +910,84 @@ main > section > article > p:last-of-type {
 /* TABLET */
 
 @media (min-width: 48rem) {
+  /* MAIN */
   .topbar {
-    padding: 1rem 2rem;
+    max-width: 52rem;
+    padding-inline: 2rem; /* zarovnání s main paddingem, jak jsme řešili minule */
   }
-
   main {
     max-width: 52rem;
-    padding: 2rem 2rem 4rem;
+    margin-inline: auto;
+    padding: 2rem;
   }
 
+  /* MAIN HEADER */
+
   main > header {
-    padding-top: 1rem;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 2rem;
+
+    margin-bottom: 4rem;
   }
 
   main > header h1 {
     font-size: 4rem;
+    line-height: 1;
   }
 
-  main > header > div {
-    max-width: 30rem;
+  .header__actions {
+    display: flex;
+    gap: 1rem;
+    margin-top: 0; /* na tabletu je header flex row, margin-top z mobilu by dělal nechtěnou mezeru */
+  }
+
+  main > header button {
+    min-width: 9rem;
+  }
+
+  /* RECEIPT + WELCOME CARD */
+
+  main > article {
+    width: 50%;
   }
 
   main > article:first-of-type {
-    margin-top: 4rem;
-    padding: 2.5rem 2rem 3rem;
+    float: left;
+
+    margin-top: 0;
+    padding: 2rem;
 
     min-height: 34rem;
   }
 
-  main > article:first-of-type h2 {
-    font-size: 2.5rem;
-  }
-
-  main > article:first-of-type h2 span {
-    font-size: 3rem;
-  }
-
   main > article:nth-of-type(2) {
+    float: right;
+
+    margin-top: 0;
     padding: 2rem;
+
+    min-height: 34rem;
   }
+
+  /* INFO CARDS */
 
   main > section {
+    clear: both;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
     gap: 1.5rem;
+
+    padding-top: 4rem;
   }
 
-  main > section > article {
+  main > section article {
     padding: 2rem;
+  }
+
+  main > section .breakfast {
+    grid-column: 1;
   }
 }
