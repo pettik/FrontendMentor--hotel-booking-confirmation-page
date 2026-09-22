@@ -356,6 +356,8 @@ main > header h1 span {
   max-width: 64rem;
   margin-inline: auto;
   display: flex;
+  max-width: 75rem; /* stejná hodnota jako main na mobilu/desktopu */
+  margin: 0 auto; /* vycentruje topbar stejně jako main */
   justify-content: space-between;
   align-items: center;
   height: var(--topbar-height);
@@ -462,7 +464,7 @@ main > header {
   padding-top: 0.5rem;
 }
 
-main > header > p {
+.header__intro > p {
   font-family: var(--font-mono);
   font-size: 0.75rem;
   letter-spacing: 0.12rem;
@@ -481,7 +483,7 @@ main > header h1 span {
   font-style: italic;
 }
 
-main > header > div {
+.header__actions {
   display: flex;
   gap: 0.75rem;
   margin-top: 1.5rem;
@@ -917,53 +919,40 @@ main > section > article > p:last-of-type {
     padding: 2rem;
   }
 
-  .main__cards {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 1.5rem;
-    align-items: center;
-  }
-
   /* MAIN HEADER */
   main > header {
-    display: grid;
-    grid-template-columns: 1fr auto;
-    grid-template-rows: auto auto;
-    align-items: end;
-    column-gap: 2rem;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 2rem;
 
     margin-bottom: 4rem;
   }
 
-  main > header p {
-    grid-column: 1;
-    grid-row: 1;
-  }
-
   main > header h1 {
-    grid-column: 1;
-    grid-row: 2;
-
-    font-size: 3.5rem;
+    font-size: 4rem;
     line-height: 1;
   }
 
-  main > header > div {
-    grid-column: 2;
-    grid-row: 2;
-
+  .header__actions {
     display: flex;
     gap: 1rem;
+    margin-top: 0; /* na tabletu je header flex row, margin-top z mobilu by dělal nechtěnou mezeru */
+  }
+
+  main > header button {
+    min-width: 9rem;
   }
 
   /* RECEIPT + WELCOME CARD */
 
   main > article {
-    width: calc(50% - 0.75rem);
+    width: 50%;
   }
 
   main > article:first-of-type {
     float: right;
+
     margin-top: 0;
     transform: rotate(2deg);
     z-index: 1;
@@ -975,13 +964,6 @@ main > section > article > p:last-of-type {
     transform: rotate(-2deg);
   }
 
-  main > article:nth-of-type(2) {
-    float: right;
-    margin-top: 0;
-
-    min-height: 33rem;
-  }
-
   /* ARRIVAL + WIFI + BREAKFAST */
 
   main > section {
@@ -989,14 +971,13 @@ main > section > article > p:last-of-type {
 
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 1.25rem;
+    gap: 1.5rem;
 
-    padding-top: 3rem;
+    padding-top: 4rem;
   }
 
   main > section article {
-    min-height: 17rem;
-    padding: 1.5rem;
+    padding: 2rem;
   }
 
   main > section .breakfast {
