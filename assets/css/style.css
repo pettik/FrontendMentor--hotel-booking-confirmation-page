@@ -1019,11 +1019,18 @@ main > section > article > p:last-of-type {
     margin-right: auto;
 
     padding: 2.5rem 2.5rem 4rem;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 0;
   }
 
   /* MAIN HEADER */
 
   main > header {
+    grid-column: 1 / -1;
+    grid-row: 1;
+
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -1048,54 +1055,40 @@ main > section > article > p:last-of-type {
     padding-inline: 1.5rem;
   }
 
-  /* WELCOME CARD + RECEIPT */
+  /* RECEIPT + WELCOME CARD */
 
   main > article {
-    float: none;
     width: auto;
+    min-height: 33rem;
+
+    grid-row: 2;
+
+    margin-top: 0;
   }
+
+  /* Welcome Card */
 
   main > article:first-of-type {
     grid-column: 2;
-    grid-row: 1;
-
-    margin-top: 0;
 
     transform: rotate(2deg);
     z-index: 1;
   }
 
+  /* Receipt */
+
   main > article:nth-of-type(2) {
     grid-column: 1;
-    grid-row: 1;
-
-    margin-top: 0;
 
     transform: rotate(-2deg);
-  }
-
-  main > article:first-of-type,
-  main > article:nth-of-type(2) {
-    min-height: 33rem;
-  }
-
-  main {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    column-gap: 0;
-  }
-
-  main > header {
-    grid-column: 1 / -1;
-  }
-
-  main > section {
-    grid-column: 1 / -1;
   }
 
   /* INFO CARDS */
 
   main > section {
+    grid-column: 1 / -1;
+    grid-row: 3;
+
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 1.5rem;
@@ -1103,7 +1096,102 @@ main > section > article > p:last-of-type {
     padding-top: 4rem;
   }
 
-  main > section .breakfast {
-    grid-column: auto;
+  main > section article {
+    padding: 2rem;
+  }
+
+  /* HOVER TO FAN */
+
+  main > article:first-of-type,
+  main > article:nth-of-type(2) {
+    transition: transform 0.4s ease;
+  }
+
+  main > article:first-of-type:hover {
+    transform: rotate(5deg) translateX(2rem);
+  }
+
+  main > article:nth-of-type(2):hover {
+    transform: rotate(-5deg) translateX(-2rem);
+  }
+
+  .sidebar__link:hover {
+    background-color: var(--color-surface);
+  }
+
+  .sidebar__link:focus-visible {
+    outline: 2px solid var(--color-primary);
+    outline-offset: 2px;
+  }
+
+  .sidebar__link.active-link {
+    background-color: var(--color-surface);
+    border: 2px solid var(--color-primary);
+  }
+
+  /* =========================
+   HOVER & FOCUS STATES
+   ========================= */
+
+  /* Sidebar navigation */
+
+  .sidebar__link {
+    transition:
+      background-color 0.2s ease,
+      color 0.2s ease,
+      outline 0.2s ease;
+  }
+
+  .sidebar__link:hover {
+    background-color: var(--neutral-0);
+  }
+
+  .sidebar__link:focus-visible {
+    outline: 2px solid var(--color-primary);
+    outline-offset: 2px;
+  }
+
+  .active-link {
+    background-color: var(--neutral-0);
+  }
+
+  /* Topbar buttons */
+
+  .topbar button {
+    transition:
+      background-color 0.2s ease,
+      border-color 0.2s ease,
+      transform 0.15s ease;
+  }
+
+  .topbar button:hover {
+    background-color: var(--neutral-0);
+  }
+
+  .topbar button:focus-visible {
+    outline: 2px solid var(--color-primary);
+    outline-offset: 2px;
+  }
+
+  .topbar button:active {
+    transform: translateY(1px);
+  }
+
+  /* Copy button */
+
+  .copy-button {
+    transition:
+      background-color 0.2s ease,
+      border-color 0.2s ease;
+  }
+
+  .copy-button:hover {
+    border-color: var(--color-primary);
+    color: var(--color-primary);
+  }
+
+  .copy-button:focus-visible {
+    outline: 2px solid var(--color-primary);
+    outline-offset: 2px;
   }
 }
