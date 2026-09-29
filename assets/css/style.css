@@ -352,17 +352,16 @@ main > header h1 span {
 
 .topbar {
   position: sticky;
+  width: 100%;
+  max-width: 64rem;
+  margin-inline: auto;
   display: flex;
+  max-width: 75rem; /* stejná hodnota jako main na mobilu/desktopu */
+  margin: 0 auto; /* vycentruje topbar stejně jako main */
   justify-content: space-between;
   align-items: center;
-
-  width: 100%;
-  max-width: 75rem;
-  margin: 0 auto;
-
   height: var(--topbar-height);
   padding: var(--main-padding);
-
   background-color: var(--color-background);
   z-index: 0;
 }
@@ -1000,61 +999,139 @@ main > section > article > p:last-of-type {
   }
 
   .sidebar {
+    width: 17rem;
     transform: translateX(0);
-    position: static;
-    width: auto;
-    height: auto;
-    flex-direction: row;
-    gap: 2rem;
-    padding: 0;
-    background-color: transparent;
-    z-index: auto;
-  }
-
-  .sidebar__header {
-    display: none;
-  }
-
-  .sidebar__list {
-    display: flex;
-    flex-direction: row;
-    gap: 0.5rem;
-    padding: 0;
-  }
-
-  .sidebar__badge {
-    display: none;
-  }
-
-  .sidebar__weather {
-    display: none;
-  }
-
-  .sidebar__footer {
-    display: none;
   }
 
   main {
-    display: grid;
-    grid-template-columns: 1fr 250px;
-    gap: 2rem;
-    max-width: 100%;
-    padding: 0;
+    width: calc(100% - 17rem);
+    max-width: none;
+    margin-left: 17rem;
+    padding: 2.5rem 2.5rem 4rem;
   }
 
   main > header {
-    grid-column: 1 / -1;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    margin-bottom: 4rem;
   }
 
-  main > article:first-of-type,
-  main > article:nth-of-type(2) {
-    grid-column: 1 / -1;
-    width: 100%;
-    float: none;
-    transform: none;
+  main > header h1 {
+    font-size: 4rem;
+    line-height: 1;
+  }
+
+  .header__actions {
+    display: flex;
+    gap: 1rem;
+    margin-top: 0;
+  }
+
+  .fan-hint {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+
+    margin-top: 0.75rem;
+
+    font-family: var(--font-mono);
+    font-size: 0.65rem;
+    font-weight: 400;
+    letter-spacing: 0.12rem;
+    text-transform: uppercase;
+
+    color: var(--color-text-muted);
+  }
+
+  /* HERO */
+
+  .container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    position: relative;
+    min-height: 34rem;
+
+    margin: 0 auto;
+  }
+
+  .receipt,
+  .welcome-card {
+    width: 50%;
+    max-width: 32rem;
+  }
+
+  .receipt {
+    transform: rotate(-2deg);
+  }
+
+  .welcome-card {
+    transform: rotate(2deg);
+  }
+
+  /* HOVER TO FAN */
+
+  .container {
+    cursor: default;
+  }
+
+  .container:hover .receipt {
+    transform: translateX(-4rem) rotate(-5deg);
+  }
+
+  .container:hover .welcome-card {
+    transform: translateX(4rem) rotate(5deg);
+  }
+
+  .hover {
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+
+    transform: translateX(-50%);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+  }
+
+  /* INFO CARDS */
+
+  .bottom-cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+
+    margin-top: 4rem;
+  }
+
+  main > section .breakfast {
+    grid-column: auto;
   }
 
   main > section {
     grid-column: 1 / -1;
+    grid-row: 3;
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+
+    padding-top: 4rem;
+  }
+
+  main > section .breakfast {
+    grid-column: auto;
+  }
+  .arrival,
+  .wifi,
+  .breakfast {
+    min-width: 0;
+    max-width: none;
   }
 }
