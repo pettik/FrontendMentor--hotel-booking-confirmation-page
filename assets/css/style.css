@@ -956,16 +956,19 @@ main > section > article > p:last-of-type {
 
   main > article:first-of-type {
     float: right;
-
     margin-top: 0;
-    transform: rotate(2deg);
+
     z-index: 1;
+    max-width: 40rem;
+    transform: translate(-10%) rotate(2deg);
   }
 
   main > article:nth-of-type(2) {
     float: left;
     margin-top: 0;
-    transform: rotate(-2deg);
+
+    max-width: 40rem;
+    transform: translate(10%) rotate(-2deg);
   }
 
   /* ARRIVAL + WIFI + BREAKFAST */
@@ -1001,6 +1004,10 @@ main > section > article > p:last-of-type {
   .sidebar {
     width: 17rem;
     transform: translateX(0);
+  }
+
+  .sidebar__header button {
+    display: none;
   }
 
   main {
