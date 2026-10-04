@@ -1072,13 +1072,13 @@ main > section > article > p:last-of-type {
     width: 400px;
     height: 420px;
     min-height: 0;
-    margin-right: 20%;
+    margin-right: 18%;
   }
 
   main > article:nth-of-type(2) {
     width: 400px;
     height: 420px;
-    margin-left: 20%;
+    margin-left: 18%;
   }
 
   main > article:first-of-type h2 {
@@ -1100,6 +1100,11 @@ main > section > article > p:last-of-type {
 
   .recipe_items dl {
     gap: 0.25rem;
+  }
+
+  .recipe_items dl:nth-of-type(2) {
+    margin-top: 0.25rem;
+    padding-top: 0.25rem;
   }
 
   .barcode {
