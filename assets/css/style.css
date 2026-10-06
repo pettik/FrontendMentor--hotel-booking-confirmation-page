@@ -905,8 +905,11 @@ main > section > article > p:last-of-type {
 
   cursor: pointer;
 }
-
-/* TABLET */
+/* ********************************************
+******************************************** */
+/* TABLET
+********************************************
+******************************************** */
 
 @media (min-width: 48rem) {
   main {
@@ -947,21 +950,17 @@ main > section > article > p:last-of-type {
   }
 
   .main__cards > article:first-of-type {
-    float: right;
     margin-top: 0;
-
     z-index: 1;
     max-width: 25rem;
     height: 26.25rem;
-    transform: translate(-10%) rotate(2deg);
+    transform: rotate(2deg);
   }
 
   .main__cards > article:nth-of-type(2) {
-    float: left;
     margin-top: 0;
-
     max-width: 25rem;
-    transform: translate(10%) rotate(-2deg);
+    transform: rotate(-2deg);
   }
 
   /* ARRIVAL + WIFI + BREAKFAST */
@@ -984,6 +983,12 @@ main > section > article > p:last-of-type {
     grid-column: 1;
   }
 }
+
+/* ********************************************
+******************************************** */
+/* DESKTOP
+********************************************
+******************************************** */
 
 @media (min-width: 75rem) {
   .topbar {
@@ -1027,6 +1032,11 @@ main > section > article > p:last-of-type {
     display: flex;
     gap: 1rem;
     margin-top: 0;
+  }
+
+  .main__cards {
+    justify-content: center;
+    align-items: center;
   }
 
   .fan-hint {
