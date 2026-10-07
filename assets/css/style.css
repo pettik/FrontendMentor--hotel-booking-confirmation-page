@@ -38,8 +38,8 @@
   --color-accent-soft: var(--sun-50);
   --color-border: var(--neutral-400);
 
-  --topbar-height: 4rem;
-  --main-padding: 0.75rem;
+  --topbar-height: 5rem;
+  --main-padding: 2rem;
 
   /* Typography */
   --font-body:
@@ -457,7 +457,7 @@ main {
   width: 100%;
   max-width: 75rem;
   margin: 0 auto;
-  padding: 1.5rem 1rem 3rem;
+  padding: 0.25rem 1rem 3rem;
 }
 
 main > header {
@@ -523,7 +523,7 @@ main > header button:last-child {
 .main__cards > article:first-of-type {
   position: relative;
   padding: 2rem 1.5rem 2.25rem;
-  min-height: 33rem;
+  min-height: 23rem;
   background: linear-gradient(
     135deg,
     var(--terracotta-500),
@@ -531,7 +531,7 @@ main > header button:last-child {
   );
   border-radius: 1.25rem;
   color: var(--neutral-0);
-  transform: rotate(-1deg);
+  transform: rotate(1deg);
   overflow: hidden;
 }
 
@@ -604,7 +604,7 @@ main > header button:last-child {
 
   background-color: var(--neutral-0);
   border-radius: 1.25rem;
-
+  transform: rotate(-1deg);
   box-shadow: 0 1rem 2rem rgb(0 0 0 / 10%);
 }
 
