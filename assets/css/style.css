@@ -43,48 +43,48 @@
 
   /* Typography */
   --font-body:
-    "DM Sans", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    'DM Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI',
     sans-serif;
-  --font-display: "Fraunces", Georgia, serif;
-  --font-mono: "DM Mono", "Courier New", monospace;
+  --font-display: 'Fraunces', Georgia, serif;
+  --font-mono: 'DM Mono', 'Courier New', monospace;
 }
 
 @font-face {
-  font-family: "Fraunces";
-  src: url("../fonts/fraunces/Fraunces-VariableFont_SOFT,WONK,opsz,wght.ttf")
-    format("truetype");
+  font-family: 'Fraunces';
+  src: url('../fonts/fraunces/Fraunces-VariableFont_SOFT,WONK,opsz,wght.ttf')
+    format('truetype');
   font-weight: 100 900;
   font-style: normal;
   font-display: swap;
 }
 
 @font-face {
-  font-family: "Fraunces";
-  src: url("../fonts/fraunces/Fraunces-Italic-VariableFont_SOFT,WONK,opsz,wght.ttf")
-    format("truetype");
+  font-family: 'Fraunces';
+  src: url('../fonts/fraunces/Fraunces-Italic-VariableFont_SOFT,WONK,opsz,wght.ttf')
+    format('truetype');
   font-weight: 100 900;
   font-style: italic;
   font-display: swap;
 }
 
 @font-face {
-  font-family: "DM Sans";
-  src: url("../fonts/dm-sans/DMSans-VariableFont_opsz,wght.ttf")
-    format("truetype");
+  font-family: 'DM Sans';
+  src: url('../fonts/dm-sans/DMSans-VariableFont_opsz,wght.ttf')
+    format('truetype');
   font-weight: 100 900;
   font-display: swap;
 }
 
 @font-face {
-  font-family: "DM Mono";
-  src: url("../fonts/dm-mono/DMMono-Regular.ttf") format("truetype");
+  font-family: 'DM Mono';
+  src: url('../fonts/dm-mono/DMMono-Regular.ttf') format('truetype');
   font-weight: 400;
   font-display: swap;
 }
 
 @font-face {
-  font-family: "DM Mono";
-  src: url("../fonts/dm-mono/DMMono-Medium.ttf") format("truetype");
+  font-family: 'DM Mono';
+  src: url('../fonts/dm-mono/DMMono-Medium.ttf') format('truetype');
   font-weight: 500;
   font-display: swap;
 }
@@ -612,7 +612,7 @@ main > header button:last-child {
   display: flex;
   justify-content: space-between;
 
-  padding-bottom: 1rem;
+  padding-bottom: 0.25rem;
 
   border-bottom: 1px dashed var(--color-border);
 }
@@ -928,6 +928,9 @@ main > section > article > p:last-of-type {
     margin-bottom: 4rem;
   }
 
+  .main__cards {
+    flex-direction: row;
+  }
   main > header h1 {
     font-size: 4rem;
     line-height: 1;
@@ -1067,10 +1070,6 @@ main > section > article > p:last-of-type {
     min-height: 34rem;
 
     margin: 0 auto;
-  }
-
-  .main__cards {
-    flex-direction: row;
   }
 
   .main__cards > article:first-of-type {
