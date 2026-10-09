@@ -964,6 +964,7 @@ main > section > article > p:last-of-type {
     margin-top: 0;
     max-width: 25rem;
     transform: rotate(-2deg);
+    order: -1;
   }
 
   /* ARRIVAL + WIFI + BREAKFAST */
