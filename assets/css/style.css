@@ -43,48 +43,48 @@
 
   /* Typography */
   --font-body:
-    'DM Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI',
+    "DM Sans", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
     sans-serif;
-  --font-display: 'Fraunces', Georgia, serif;
-  --font-mono: 'DM Mono', 'Courier New', monospace;
+  --font-display: "Fraunces", Georgia, serif;
+  --font-mono: "DM Mono", "Courier New", monospace;
 }
 
 @font-face {
-  font-family: 'Fraunces';
-  src: url('../fonts/fraunces/Fraunces-VariableFont_SOFT,WONK,opsz,wght.ttf')
-    format('truetype');
+  font-family: "Fraunces";
+  src: url("../fonts/fraunces/Fraunces-VariableFont_SOFT,WONK,opsz,wght.ttf")
+    format("truetype");
   font-weight: 100 900;
   font-style: normal;
   font-display: swap;
 }
 
 @font-face {
-  font-family: 'Fraunces';
-  src: url('../fonts/fraunces/Fraunces-Italic-VariableFont_SOFT,WONK,opsz,wght.ttf')
-    format('truetype');
+  font-family: "Fraunces";
+  src: url("../fonts/fraunces/Fraunces-Italic-VariableFont_SOFT,WONK,opsz,wght.ttf")
+    format("truetype");
   font-weight: 100 900;
   font-style: italic;
   font-display: swap;
 }
 
 @font-face {
-  font-family: 'DM Sans';
-  src: url('../fonts/dm-sans/DMSans-VariableFont_opsz,wght.ttf')
-    format('truetype');
+  font-family: "DM Sans";
+  src: url("../fonts/dm-sans/DMSans-VariableFont_opsz,wght.ttf")
+    format("truetype");
   font-weight: 100 900;
   font-display: swap;
 }
 
 @font-face {
-  font-family: 'DM Mono';
-  src: url('../fonts/dm-mono/DMMono-Regular.ttf') format('truetype');
+  font-family: "DM Mono";
+  src: url("../fonts/dm-mono/DMMono-Regular.ttf") format("truetype");
   font-weight: 400;
   font-display: swap;
 }
 
 @font-face {
-  font-family: 'DM Mono';
-  src: url('../fonts/dm-mono/DMMono-Medium.ttf') format('truetype');
+  font-family: "DM Mono";
+  src: url("../fonts/dm-mono/DMMono-Medium.ttf") format("truetype");
   font-weight: 500;
   font-display: swap;
 }
@@ -865,44 +865,74 @@ main > section > article > p:last-of-type {
   margin-top: 1rem;
 }
 
-.wifi dl dt,
-.wifi dl dd {
-  margin: 0;
-}
-
-.wifi dl dt {
-  font-family: var(--font-mono);
-  font-size: 0.7rem;
-  letter-spacing: 0.12rem;
-  text-transform: uppercase;
-  color: var(--color-text-muted);
-}
-
-.wifi dl dd {
+.wifi dl > div {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  gap: 1rem;
 
+  min-width: 0;
   padding: 0.6rem 0.75rem;
 
   background-color: var(--neutral-100);
   border-radius: 0.6rem;
 }
 
-.wifi dl dd button {
+.wifi dl dt,
+.wifi dl dd {
+  min-width: 0;
+  margin: 0;
+  padding: 0;
+
+  background: transparent;
+}
+
+.wifi dl dt {
+  flex-shrink: 0;
+
+  color: var(--color-text-muted);
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.12rem;
+  text-transform: uppercase;
+}
+
+.wifi dl dd {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 0.5rem;
+
+  text-align: right;
+  white-space: nowrap;
+}
+
+.wifi .copy-button {
+  flex-shrink: 0;
+
   padding: 0.25rem 0.6rem;
 
   border: 1px solid var(--color-border);
   border-radius: 999px;
 
   background: transparent;
-
   color: var(--color-text-muted);
+
   font-family: var(--font-mono);
   font-size: 0.65rem;
+  line-height: 1.4;
   text-transform: uppercase;
 
   cursor: pointer;
+}
+
+.wifi .copy-button:hover {
+  background-color: var(--color-surface);
+}
+
+.wifi .copy-button:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
 }
 /* ********************************************
 ******************************************** */
@@ -997,7 +1027,7 @@ main > section > article > p:last-of-type {
   }
 
   main > section article {
-    padding: 2rem;
+    padding: 1.5rem;
   }
 
   main > section .breakfast {
