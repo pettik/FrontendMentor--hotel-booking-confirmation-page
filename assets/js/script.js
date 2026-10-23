@@ -44,3 +44,27 @@ function updateFanHint() {
 updateFanHint();
 
 window.addEventListener('resize', updateFanHint);
+
+// ========================================
+// DESKTOP - HOVER TO FAN
+// ========================================
+
+const mainCards = document.querySelector('.main__cards');
+
+if (mainCards) {
+  mainCards.addEventListener('pointerenter', function (event) {
+    // Funguje pouze s myší a v desktopovém zobrazení
+    if (
+      event.pointerType !== 'mouse' ||
+      !window.matchMedia('(min-width: 75rem)').matches
+    ) {
+      return;
+    }
+
+    mainCards.classList.add('is-fanned');
+  });
+
+  mainCards.addEventListener('pointerleave', function () {
+    mainCards.classList.remove('is-fanned');
+  });
+}

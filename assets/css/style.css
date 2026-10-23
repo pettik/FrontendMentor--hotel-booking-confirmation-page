@@ -1140,11 +1140,13 @@ main > section > article > p:last-of-type {
     width: 31.25rem;
     height: 32.5rem;
     min-height: 0;
+    transition: all 0.75s;
   }
 
   .main__cards > article:nth-of-type(2) {
     width: 31.25rem;
     height: 32.5rem;
+    transition: all 0.75s;
   }
 
   .main__cards > article:first-of-type h2 {
@@ -1247,5 +1249,110 @@ main > section > article > p:last-of-type {
   .breakfast {
     min-width: 0;
     max-width: none;
+  }
+
+  /* =========================================
+   DESKTOP - HOVER TO FAN ANIMATION
+   ========================================= */
+
+  .main__fan-sun {
+    display: none;
+  }
+
+  @media (min-width: 75rem) {
+    /* Společný prostor pro obě karty */
+
+    .main__cards {
+      position: relative;
+      isolation: isolate;
+    }
+
+    /* Společné nastavení animace */
+
+    .main__cards > article {
+      position: relative;
+      flex-shrink: 1;
+
+      transition: transform 0.5s ease;
+      will-change: transform;
+    }
+
+    /* =====================================
+     DEFAULT STATE - CLOSED
+     ===================================== */
+
+    /* Welcome Card (první article v HTML) */
+
+    .main__cards > article:first-of-type {
+      transform: translateX(-1.75rem) rotate(3deg);
+
+      z-index: 3;
+    }
+
+    /* Receipt (druhý article v HTML) */
+
+    .main__cards > article:nth-of-type(2) {
+      transform: translateX(1.75rem) rotate(-3deg);
+
+      z-index: 2;
+    }
+
+    /* =====================================
+     HOVER STATE - FAN OPEN
+     ===================================== */
+
+    .main__cards.is-fanned > article:first-of-type {
+      transform: translateX(6rem) rotate(-10deg);
+    }
+
+    .main__cards.is-fanned > article:nth-of-type(2) {
+      transform: translateX(-6rem) rotate(10deg);
+    }
+
+    /* =====================================
+     SUN ILLUSTRATION
+     ===================================== */
+
+    .main__fan-sun {
+      display: block;
+      position: absolute;
+
+      width: 7rem;
+      height: 7rem;
+
+      top: 50%;
+      left: 50%;
+
+      z-index: 1;
+      pointer-events: none;
+
+      opacity: 0;
+      visibility: hidden;
+
+      transform: translate(-50%, -50%) scale(0.5) rotate(-0deg);
+
+      transition:
+        opacity 0.35s ease,
+        transform 0.5s ease,
+        visibility 0.35s;
+    }
+
+    /* Slunce se objeví po rozevření */
+
+    .main__cards.is-fanned .main__fan-sun {
+      opacity: 1;
+      visibility: visible;
+
+      transform: translate(-50%, -50%) scale(1.5) rotate(0deg);
+    }
+  }
+
+  /* Přístupnost - omezení animací */
+
+  @media (prefers-reduced-motion: reduce) {
+    .main__cards > article,
+    .main__fan-sun {
+      transition: none;
+    }
   }
 }
