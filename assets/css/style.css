@@ -491,7 +491,7 @@ main > header h1 span {
   margin-top: 1.5rem;
 }
 
-main > header button {
+.header__actions > button {
   flex: 1;
   min-width: 10rem;
   min-height: 2.75rem;
@@ -500,14 +500,15 @@ main > header button {
   border: 0.0625rem solid var(--color-border);
   border-radius: 62.4375rem;
 
-  background-color: transparent;
+  background-color: var(--neutral-100);
   color: var(--color-text);
 
   font-weight: 600;
   cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
-main > header button:last-child {
+.header__actions > button:last-child {
   background-color: var(--neutral-800);
   border-color: var(--neutral-800);
   color: var(--neutral-0);
@@ -994,8 +995,20 @@ main > section > article > p:last-of-type {
     margin-top: 0; /* na tabletu je header flex row, margin-top z mobilu by dělal nechtěnou mezeru */
   }
 
-  main > header button {
+  .header__actions > header button {
     min-width: 9rem;
+  }
+
+  .header__actions > button {
+    transition:
+      background-color 0.3s ease,
+      color 0.3s ease;
+  }
+  .header__actions > button:first-child:hover {
+    background-color: var(--neutral-0);
+  }
+  .header__actions > button:last-child:hover {
+    color: var(--neutral-100);
   }
 
   /* RECEIPT + WELCOME CARD */
@@ -1039,6 +1052,10 @@ main > section > article > p:last-of-type {
 
   .recipe_items dl dd span {
     margin-right: 0.25rem;
+  }
+
+  .main__fan-sun {
+    display: none;
   }
 
   /* ARRIVAL + WIFI + BREAKFAST */
