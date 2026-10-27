@@ -27,6 +27,10 @@ The page is built with semantic HTML, custom CSS, and vanilla JavaScript. Its vi
 - Vanilla JavaScript
 - Fraunces, DM Sans, and DM Mono
 
+## AI collaboration
+
+I used ChatGPT as a discussion partner while working on this project. We explored implementation approaches, discussed design and development decisions, and reviewed ideas for selected features. The collaboration helped me think through the solution and refine my approach as I built the page.
+
 ## Run locally
 
 No build tools or package installation are required.
