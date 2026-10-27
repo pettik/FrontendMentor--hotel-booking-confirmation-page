@@ -342,7 +342,7 @@ main > header h1 span {
   background: rgba(0, 0, 0, 0.8);
   opacity: 0;
   pointer-events: none;
-  z-index: 1;
+  z-index: 2;
   transition: opacity 0.3s;
 }
 
@@ -455,6 +455,10 @@ main > header h1 span {
   letter-spacing: 0.05rem;
 }
 
+.sidebar__item:hover .sidebar__link {
+  background-color: var(--color-surface);
+}
+
 /* MAIN */
 main {
   width: 100%;
@@ -520,6 +524,10 @@ main > header h1 span {
   flex-direction: column;
   gap: 1.5rem;
   margin-top: 3rem;
+}
+
+.main__fan-sun {
+  display: none;
 }
 
 /* WELCOME CARD */
@@ -1268,10 +1276,6 @@ main > section > article > p:last-of-type {
   .breakfast {
     min-width: 0;
     max-width: none;
-  }
-
-  .sidebar__item:hover .sidebar__link {
-    background-color: var(--color-surface);
   }
 
   /* =========================================
