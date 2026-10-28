@@ -2,23 +2,57 @@ const menuIcon = document.getElementById('menu-main-icon');
 const sidebarPanel = document.getElementById('sidebar');
 const closeIcon = document.getElementById('close-icon');
 const backdrop = document.querySelector('.backdrop');
-// menuIconImg proměnná už není potřeba — topbar ikona se nikdy nemění
 
-closeIcon.addEventListener('click', function () {
-  closeSidebar();
-});
+const desktopQuery = window.matchMedia('(min-width: 75rem)');
 
-menuIcon.addEventListener('click', function () {
+// ========================================
+// SIDEBAR - ACCESSIBILITY
+// ========================================
+
+function updateSidebarAccessibility() {
+  const isDesktop = desktopQuery.matches;
+  const isOpen = sidebarPanel.classList.contains('sidebar--open');
+
+  // Zavřený mobilní sidebar nesmí přijímat fokus.
+  // Desktopový sidebar je přístupný vždy.
+  sidebarPanel.inert = !isDesktop && !isOpen;
+}
+
+function openSidebar() {
   sidebarPanel.classList.add('sidebar--open');
   backdrop.classList.add('backdrop--visible');
+
   backdrop.setAttribute('aria-hidden', 'false');
   menuIcon.setAttribute('aria-expanded', 'true');
-  // žádná změna .src ani aria-label — topbar tlačítko zůstává vizuálně "hamburger" napořád
-});
 
-backdrop.addEventListener('click', function () {
-  closeSidebar();
-});
+  updateSidebarAccessibility();
+
+  // Po otevření přesuneme fokus na zavírací tlačítko.
+  closeIcon.focus();
+}
+
+function closeSidebar() {
+  if (!sidebarPanel.classList.contains('sidebar--open')) {
+    return;
+  }
+
+  // Fokus vrátíme na hamburger před deaktivací sidebaru.
+  if (!desktopQuery.matches) {
+    menuIcon.focus();
+  }
+
+  sidebarPanel.classList.remove('sidebar--open');
+  backdrop.classList.remove('backdrop--visible');
+
+  backdrop.setAttribute('aria-hidden', 'true');
+  menuIcon.setAttribute('aria-expanded', 'false');
+
+  updateSidebarAccessibility();
+}
+
+menuIcon.addEventListener('click', openSidebar);
+closeIcon.addEventListener('click', closeSidebar);
+backdrop.addEventListener('click', closeSidebar);
 
 document.addEventListener('keydown', function (event) {
   if (event.key === 'Escape') {
@@ -26,12 +60,27 @@ document.addEventListener('keydown', function (event) {
   }
 });
 
-function closeSidebar() {
-  sidebarPanel.classList.remove('sidebar--open');
-  backdrop.classList.remove('backdrop--visible');
-  menuIcon.setAttribute('aria-expanded', 'false');
-  backdrop.setAttribute('aria-hidden', 'true');
-}
+// Při změně šířky okna aktualizujeme přístupnost.
+desktopQuery.addEventListener('change', function () {
+  if (desktopQuery.matches) {
+    sidebarPanel.classList.remove('sidebar--open');
+    backdrop.classList.remove('backdrop--visible');
+
+    backdrop.setAttribute('aria-hidden', 'true');
+    menuIcon.setAttribute('aria-expanded', 'false');
+  } else if (sidebarPanel.contains(document.activeElement)) {
+    menuIcon.focus();
+  }
+
+  updateSidebarAccessibility();
+});
+
+// Nastavení při prvním načtení stránky.
+updateSidebarAccessibility();
+
+// ========================================
+// FAN HINT - DESKTOP ONLY
+// ========================================
 
 const fanHint = document.querySelector('.fan-hint');
 
@@ -53,7 +102,7 @@ const mainCards = document.querySelector('.main__cards');
 
 if (mainCards) {
   mainCards.addEventListener('pointerenter', function (event) {
-    // Funguje pouze s myší a v desktopovém zobrazení
+    // Funguje pouze s myší a v desktopovém zobrazení.
     if (
       event.pointerType !== 'mouse' ||
       !window.matchMedia('(min-width: 75rem)').matches
