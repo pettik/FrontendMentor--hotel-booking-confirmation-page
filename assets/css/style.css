@@ -749,10 +749,6 @@ main > header h1 span {
   height: auto;
 }
 
-p.fan-hint {
-  display: none;
-}
-
 .fan-hint {
   display: none; /* skrytý na mobilech a tabletech */
   justify-content: center;
@@ -1144,10 +1140,8 @@ main > section > article > p:last-of-type {
     align-items: center;
   }
 
-  @media (min-width: 1024px) {
-    .fan-hint {
-      display: flex;
-    }
+  .fan-hint {
+    display: flex;
   }
 
   /* HERO */
@@ -1377,6 +1371,8 @@ main > section > article > p:last-of-type {
   /* Přístupnost - omezení animací */
 
   @media (prefers-reduced-motion: reduce) {
+    .sidebar,
+    .backdrop,
     .main__cards > article,
     .main__fan-sun {
       transition: none;

@@ -79,22 +79,6 @@ desktopQuery.addEventListener('change', function () {
 updateSidebarAccessibility();
 
 // ========================================
-// FAN HINT - DESKTOP ONLY
-// ========================================
-
-const fanHint = document.querySelector('.fan-hint');
-
-function updateFanHint() {
-  fanHint.style.display = window.matchMedia('(min-width: 1200px)').matches
-    ? 'block'
-    : 'none';
-}
-
-updateFanHint();
-
-window.addEventListener('resize', updateFanHint);
-
-// ========================================
 // DESKTOP - HOVER TO FAN
 // ========================================
 
