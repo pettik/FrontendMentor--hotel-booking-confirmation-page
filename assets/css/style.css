@@ -9,6 +9,7 @@
   --neutral-100: hsl(35, 60%, 96%);
   --neutral-50: hsl(40, 60%, 98%);
   --neutral-0: hsl(0, 0%, 100%);
+  --button-hover: hsl(30, 24%, 93%);
 
   /* Sun */
   --sun-500: hsl(42, 83%, 58%);
@@ -341,7 +342,7 @@ main > header h1 span {
   background: rgba(0, 0, 0, 0.8);
   opacity: 0;
   pointer-events: none;
-  z-index: 1;
+  z-index: 2;
   transition: opacity 0.3s;
 }
 
@@ -454,6 +455,10 @@ main > header h1 span {
   letter-spacing: 0.05rem;
 }
 
+.sidebar__item:hover .sidebar__link {
+  background-color: var(--color-surface);
+}
+
 /* MAIN */
 main {
   width: 100%;
@@ -509,7 +514,7 @@ main > header h1 span {
 }
 
 .header__actions > button:last-child {
-  background-color: var(--neutral-800);
+  background-color: var(--neutral-900);
   border-color: var(--neutral-800);
   color: var(--neutral-0);
 }
@@ -519,6 +524,10 @@ main > header h1 span {
   flex-direction: column;
   gap: 1.5rem;
   margin-top: 3rem;
+}
+
+.main__fan-sun {
+  display: none;
 }
 
 /* WELCOME CARD */
@@ -738,10 +747,6 @@ main > header h1 span {
 .barcode img {
   width: 6.5rem;
   height: auto;
-}
-
-p.fan-hint {
-  display: none;
 }
 
 .fan-hint {
@@ -1005,10 +1010,11 @@ main > section > article > p:last-of-type {
       color 0.3s ease;
   }
   .header__actions > button:first-child:hover {
-    background-color: var(--neutral-0);
+    background-color: var(--button-hover);
   }
   .header__actions > button:last-child:hover {
     color: var(--neutral-100);
+    background-color: var(--neutral-800);
   }
 
   /* RECEIPT + WELCOME CARD */
@@ -1134,10 +1140,8 @@ main > section > article > p:last-of-type {
     align-items: center;
   }
 
-  @media (min-width: 1024px) {
-    .fan-hint {
-      display: flex;
-    }
+  .fan-hint {
+    display: flex;
   }
 
   /* HERO */
@@ -1367,6 +1371,8 @@ main > section > article > p:last-of-type {
   /* Přístupnost - omezení animací */
 
   @media (prefers-reduced-motion: reduce) {
+    .sidebar,
+    .backdrop,
     .main__cards > article,
     .main__fan-sun {
       transition: none;
