@@ -154,7 +154,7 @@ h6 {
 
 body {
   font-family: var(--font-body);
-  font-size: 14px;
+  font-size: 0.875rem;
   line-height: 1.5;
   color: var(--color-text);
   background-color: var(--color-background);
@@ -354,8 +354,6 @@ main > header h1 span {
 .topbar {
   position: sticky;
   width: 100%;
-  max-width: 64rem;
-  margin-inline: auto;
   display: flex;
   max-width: 75rem; /* stejná hodnota jako main na mobilu/desktopu */
   margin: 0 auto; /* vycentruje topbar stejně jako main */
@@ -1019,10 +1017,6 @@ main > section > article > p:last-of-type {
 
   /* RECEIPT + WELCOME CARD */
 
-  main > article {
-    width: 50%;
-  }
-
   .main__cards > article:first-of-type {
     margin-top: 0;
     z-index: 1;
@@ -1176,10 +1170,6 @@ main > section > article > p:last-of-type {
 
   .receipt {
     transform: rotate(-2deg);
-  }
-
-  .recipe_content {
-    padding: 0.5rem 0;
   }
 
   .recipe_content {
