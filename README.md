@@ -26,7 +26,6 @@ The page is built with semantic HTML, custom CSS, and vanilla JavaScript. Its vi
 
 - [Source code](https://github.com/pettik/FrontendMentor--hotel-booking-confirmation-page)
 - [Live site](https://pettik-hotel-booking-confirmation-pge.netlify.app/)
-- [Figma design](https://www.figma.com/design/8bkHshTistvtNXbwRTymM3/hotel-booking-confirmation-page?node-id=22-2)
 
 Screenshots of the implementation still need to be added.
 
